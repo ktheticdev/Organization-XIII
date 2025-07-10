@@ -29,7 +29,8 @@ modules:
 
   - type: akmods
     base: cachyos
-    nvidia: proprietary
+    nvidia:
+      nvidia: proprietary
     install:
       - v4l2loopback
       - nvidia
