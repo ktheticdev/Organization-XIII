@@ -16,7 +16,7 @@ modules:
     files:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-  - from-file: kernels/cachy.yml
+  - from-file: kernels/cachy-lto.yml
 
   - type: rpm-ostree
     repos:
@@ -31,7 +31,7 @@ modules:
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
   - type: akmods
-    base: cachyos
+    base: cachyos-lto
     nvidia:
       nvidia: proprietary
     install:
