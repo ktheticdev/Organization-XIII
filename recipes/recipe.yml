@@ -19,6 +19,8 @@ modules:
   - from-file: kernels/cachy.yml
 
   - type: rpm-ostree
+    repos:
+      - https://negativo17.org/repos/fedora-nvidia.repo
     install:
       - zsh
     remove:
@@ -26,6 +28,14 @@ modules:
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+
+  - type: akmods
+    base: cachyos
+    nvidia:
+      nvidia: proprietary
+    install:
+      - v4l2loopback
+      - nvidia
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
