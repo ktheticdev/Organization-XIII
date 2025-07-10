@@ -25,7 +25,11 @@ modules:
     install:
       - zsh
       - gnome-session-xsession
-      - docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
