@@ -21,9 +21,11 @@ modules:
   - type: rpm-ostree
     repos:
       - https://negativo17.org/repos/fedora-nvidia.repo
+      - https://download.docker.com/linux/fedora/docker-ce.repo
     install:
       - zsh
       - gnome-session-xsession
+      - docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
