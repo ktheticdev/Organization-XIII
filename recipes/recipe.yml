@@ -19,6 +19,8 @@ modules:
   - from-file: kernels/cachy.yml
 
   - type: rpm-ostree
+    repos:
+      - https://negativo17.org/repos/fedora-nvidia.repo
     install:
       - zsh
     remove:
