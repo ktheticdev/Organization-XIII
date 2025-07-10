@@ -36,7 +36,15 @@ modules:
     install:
       - v4l2loopback
       - nvidia
-
+      
+  - type: rpm-ostree
+    repos:
+      - https://negativo17.org/repos/fedora-nvidia.repo
+    install:
+      - nvidia-driver
+      - nvidia-driver-cuda
+      - nvidia-settings
+  
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
