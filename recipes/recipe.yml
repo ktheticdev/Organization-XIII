@@ -23,6 +23,7 @@ modules:
       - https://negativo17.org/repos/fedora-nvidia.repo
     install:
       - zsh
+      - gnome-session-xsession
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
