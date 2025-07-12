@@ -20,6 +20,7 @@ modules:
 
   - type: rpm-ostree
     repos:
+      - https://repo.secureblue.dev/secureblue.repo
       - https://negativo17.org/repos/fedora-nvidia.repo
       - https://download.docker.com/linux/fedora/docker-ce.repo
     install:
@@ -30,6 +31,7 @@ modules:
       - containerd.io
       - docker-buildx-plugin
       - docker-compose-plugin
+      - trivalent
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
