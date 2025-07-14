@@ -31,8 +31,8 @@ modules:
       - containerd.io
       - docker-buildx-plugin
       - docker-compose-plugin
-      - https://files.catbox.moe/6l230l.rpm
       - trivalent
+      - https://cdn.discordapp.com/attachments/849628218976632832/1394330450071257159/sp260_series_mf_pcl-1.01-0.noarch.rpm?ex=68766aec&is=6875196c&hm=a25a7645369cdda894d7319ff1a03e76cbb60d187f4d5fddedc338c50422cfc8&
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
