@@ -42,10 +42,11 @@ modules:
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
       - sane-airscan
     replace:
-      - https://cdn.discordapp.com/attachments/1394338282447306823/1394618327380394006/sane-backends-1.4.0-2.fc42.x86_64.rpm?ex=68777708&is=68762588&hm=09a976dedec77fc985b5515db49c8e76b7f2ad49bd1d95a6d74b692b1f0fc439&
-      - https://cdn.discordapp.com/attachments/1394338282447306823/1394611802918355046/sane-backends-drivers-cameras-1.4.0-2.fc42.x86_64.rpm?ex=687770f4&is=68761f74&hm=ef065c57486aaaed8531cbbabe5017375e1f624d2e05f4220318b58c24640162&
-      - https://cdn.discordapp.com/attachments/1394338282447306823/1394611803496910858/sane-backends-drivers-scanners-1.4.0-2.fc42.x86_64.rpm?ex=687770f4&is=68761f74&hm=5d28cfeb3d107d953e7fb20fc88a203e66a17114c70f10cf11ac764e053e8059&
-      - https://cdn.discordapp.com/attachments/1394338282447306823/1394611804138901644/sane-backends-libs-1.4.0-2.fc42.x86_64.rpm?ex=687770f4&is=68761f74&hm=e4963f0795f2a0a7d91986a5b281bdb8b4a69e66c70b2f9731f0324f63cb5bde&
+      packages:
+        - https://cdn.discordapp.com/attachments/1394338282447306823/1394618327380394006/sane-backends-1.4.0-2.fc42.x86_64.rpm?ex=68777708&is=68762588&hm=09a976dedec77fc985b5515db49c8e76b7f2ad49bd1d95a6d74b692b1f0fc439&
+        - https://cdn.discordapp.com/attachments/1394338282447306823/1394611802918355046/sane-backends-drivers-cameras-1.4.0-2.fc42.x86_64.rpm?ex=687770f4&is=68761f74&hm=ef065c57486aaaed8531cbbabe5017375e1f624d2e05f4220318b58c24640162&
+        - https://cdn.discordapp.com/attachments/1394338282447306823/1394611803496910858/sane-backends-drivers-scanners-1.4.0-2.fc42.x86_64.rpm?ex=687770f4&is=68761f74&hm=5d28cfeb3d107d953e7fb20fc88a203e66a17114c70f10cf11ac764e053e8059&
+        - https://cdn.discordapp.com/attachments/1394338282447306823/1394611804138901644/sane-backends-libs-1.4.0-2.fc42.x86_64.rpm?ex=687770f4&is=68761f74&hm=e4963f0795f2a0a7d91986a5b281bdb8b4a69e66c70b2f9731f0324f63cb5bde&
 
 
   - type: akmods
