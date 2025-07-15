@@ -44,6 +44,11 @@ modules:
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      - sane-airscan
+      - sane-backends
+      - sane-backends-libs
+      - sane-backends-drivers-cameras
+      - sane-backends-drivers-scanners
 
   - type: akmods
     base: cachyos-lto
