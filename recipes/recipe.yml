@@ -47,7 +47,7 @@ modules:
       - sane-backends-libs
       - libsane-hpaio
       - hplip-libs
-
+      - hplip
 
   - type: akmods
     base: cachyos-lto
@@ -70,7 +70,7 @@ modules:
       - https://cdn.discordapp.com/attachments/1394338282447306823/1394611804138901644/sane-backends-libs-1.4.0-2.fc42.x86_64.rpm?ex=687770f4&is=68761f74&hm=e4963f0795f2a0a7d91986a5b281bdb8b4a69e66c70b2f9731f0324f63cb5bde&
       - libsane-hpaio
       - hplip-libs
-
+      - hplip
   
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
