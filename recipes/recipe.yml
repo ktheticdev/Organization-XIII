@@ -32,8 +32,8 @@ modules:
       - docker-buildx-plugin
       - docker-compose-plugin
       - trivalent
-      - https://cdn.discordapp.com/attachments/849628218976632832/1394330450071257159/sp260_series_mf_pcl-1.01-0.noarch.rpm?ex=68766aec&is=6875196c&hm=a25a7645369cdda894d7319ff1a03e76cbb60d187f4d5fddedc338c50422cfc8&
-      - https://cdn.discordapp.com/attachments/1394338282447306823/1394338359807180820/ricoh-scan-utility-rhel-1.01-0.x86_64.rpm?ex=6876724a&is=687520ca&hm=0f3a873c037c2f123f50ddcc2046e4cde784f86da0c3856ffd64852f7e4e0f93&
+      - https://github.com/ktheticdev/ricoh-spc261sfnw-driver-rpm/releases/download/v1/sp260_series_mf_pcl-1.01-0.noarch.rpm
+      - https://github.com/ktheticdev/ricoh-spc261sfnw-driver-rpm/releases/download/v1/ricoh-scan-utility-rhel-1.01-0.x86_64.rpm
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
