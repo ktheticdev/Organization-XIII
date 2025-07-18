@@ -1,7 +1,7 @@
 ---
-# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/ktheticdev/bluebuild-cli/refs/heads/main/test-files/schema/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: organization-xiii
+name: organization_xiii
 # description will be included in the image's metadata
 description: they will pay for this
 
@@ -39,6 +39,7 @@ modules:
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      - cosign
 
   - type: akmods
     base: cachyos-lto
