@@ -18,7 +18,7 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
   - from-file: kernels/cachy-lto.yml
 
-  - type: rpm-ostree
+  - type: dnf
     repos:
       - https://repo.secureblue.dev/secureblue.repo
       - https://negativo17.org/repos/fedora-nvidia.repo
@@ -49,7 +49,7 @@ modules:
       - v4l2loopback
       - nvidia
       
-  - type: rpm-ostree
+  - type: dnf
     repos:
       - https://negativo17.org/repos/fedora-nvidia.repo
     install:
