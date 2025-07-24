@@ -20,20 +20,22 @@ modules:
 
   - type: dnf
     repos:
-      - https://repo.secureblue.dev/secureblue.repo
-      - https://negativo17.org/repos/fedora-nvidia.repo
-      - https://download.docker.com/linux/fedora/docker-ce.repo
+      files:
+        - https://repo.secureblue.dev/secureblue.repo
+        - https://negativo17.org/repos/fedora-nvidia.repo
+        - https://download.docker.com/linux/fedora/docker-ce.repo
     install:
-      - zsh
-      - gnome-session-xsession
-      - docker-ce
-      - docker-ce-cli
-      - containerd.io
-      - docker-buildx-plugin
-      - docker-compose-plugin
-      - trivalent
-      - https://github.com/ktheticdev/ricoh-spc261sfnw-driver-rpm/releases/download/v1/sp260_series_mf_pcl-1.01-0.noarch.rpm
-      - https://github.com/ktheticdev/ricoh-spc261sfnw-driver-rpm/releases/download/v1/ricoh-scan-utility-rhel-1.01-0.x86_64.rpm
+      packages:
+        - zsh
+        - gnome-session-xsession
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+        - docker-buildx-plugin
+        - docker-compose-plugin
+        - trivalent
+        - https://github.com/ktheticdev/ricoh-spc261sfnw-driver-rpm/releases/download/v1/sp260_series_mf_pcl-1.01-0.noarch.rpm
+        - https://github.com/ktheticdev/ricoh-spc261sfnw-driver-rpm/releases/download/v1/ricoh-scan-utility-rhel-1.01-0.x86_64.rpm
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
@@ -51,11 +53,13 @@ modules:
       
   - type: dnf
     repos:
-      - https://negativo17.org/repos/fedora-nvidia.repo
+      files:
+        - https://negativo17.org/repos/fedora-nvidia.repo
     install:
-      - nvidia-driver
-      - nvidia-driver-cuda
-      - nvidia-settings
+      packages:
+        - nvidia-driver
+        - nvidia-driver-cuda
+        - nvidia-settings
   
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
