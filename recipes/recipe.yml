@@ -46,7 +46,7 @@ modules:
         - cosign
 
   - type: akmods
-    base: cachyos-lto
+    base: cachyos
     nvidia:
       nvidia: proprietary
     install:
