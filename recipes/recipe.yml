@@ -45,14 +45,6 @@ modules:
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
         - cosign
 
-  - type: akmods
-    base: cachyos-lto
-    nvidia:
-      nvidia: proprietary
-    install:
-      - v4l2loopback
-      - nvidia
-      
   - type: dnf
     repos:
       files:
@@ -62,6 +54,14 @@ modules:
         - nvidia-driver
         - nvidia-driver-cuda
         - nvidia-settings
+
+  - type: akmods
+    base: cachyos-lto
+    nvidia:
+      nvidia: proprietary
+    install:
+      - v4l2loopback
+      - nvidia
   
   - type: default-flatpaks
     configurations:
