@@ -43,24 +43,6 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
         - cosign
-
-  - type: akmods
-    base: cachyos-lto
-    nvidia:
-      nvidia: proprietary
-    install:
-      - v4l2loopback
-      - nvidia
-
-  - type: dnf
-    replace:
-    - from-repo: fedora-multimedia
-      allow-erasing: true
-      packages:
-        - old: xorg-x11-drv-nvidia
-          new: xorg-x11-drv-nvidia
-        - old: xorg-x11-drv-nvidia-cuda-libs
-          new: nvidia-driver-cuda-libs
         
   - type: dnf
     install:
@@ -68,6 +50,14 @@ modules:
         - nvidia-driver
         - nvidia-driver-cuda
         - nvidia-settings
+  
+  - type: akmods
+    base: cachyos-lto
+    nvidia:
+      nvidia: proprietary
+    install:
+      - v4l2loopback
+      - nvidia
 
   - type: default-flatpaks
     configurations:
