@@ -58,7 +58,8 @@ modules:
       allow-erasing: true
       packages:
         - xorg-x11-drv-nvidia
-        - nvidia-driver-cuda-libs
+        - old: xorg-x11-drv-nvidia-cuda-libs
+          new: nvidia-driver-cuda-libs
         
   - type: dnf
     install:
