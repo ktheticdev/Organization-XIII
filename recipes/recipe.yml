@@ -22,7 +22,6 @@ modules:
     repos:
       files:
         - https://repo.secureblue.dev/secureblue.repo
-        - https://negativo17.org/repos/fedora-multimedia.repo
         - https://download.docker.com/linux/fedora/docker-ce.repo
     install:
       packages:
