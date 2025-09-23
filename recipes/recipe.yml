@@ -57,6 +57,12 @@ modules:
     - from-repo: fedora-multimedia
       allow-erasing: true
       packages:
+        - xorg-x11-drv-nvidia
+        - nvidia-driver-cuda-libs
+        
+  - type: dnf
+    install:
+      packages:
         - nvidia-driver
         - nvidia-driver-cuda
         - nvidia-settings
