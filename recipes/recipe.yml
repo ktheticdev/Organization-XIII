@@ -53,9 +53,6 @@ modules:
       - nvidia
       
   - type: dnf
-    repos:
-      files:
-        - https://negativo17.org/repos/fedora-multimedia.repo
     install:
       packages:
         - nvidia-driver
