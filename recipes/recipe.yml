@@ -22,7 +22,7 @@ modules:
     repos:
       files:
         - https://repo.secureblue.dev/secureblue.repo
-        - https://negativo17.org/repos/fedora-nvidia.repo
+        - https://negativo17.org/repos/fedora-multimedia.repo
         - https://download.docker.com/linux/fedora/docker-ce.repo
     install:
       packages:
@@ -56,7 +56,7 @@ modules:
   - type: dnf
     repos:
       files:
-        - https://negativo17.org/repos/fedora-nvidia.repo
+        - https://negativo17.org/repos/fedora-multimedia.repo
     install:
       packages:
         - nvidia-driver
