@@ -23,6 +23,8 @@ modules:
       files:
         - https://repo.secureblue.dev/secureblue.repo
         - https://download.docker.com/linux/fedora/docker-ce.repo
+    optfix:
+      - ricoh-scan-utility
     install:
       packages:
         - zsh
@@ -42,8 +44,8 @@ modules:
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-        - cosign       
-  
+        - cosign
+
   - type: akmods
     base: cachyos-lto
     nvidia:
@@ -51,7 +53,7 @@ modules:
     install:
       - v4l2loopback
       - nvidia
-      
+
   - type: dnf
     install:
       allow-erasing: true
