@@ -8,10 +8,6 @@ modules:
         - kernel-modules-core
         - kernel-modules-extra
 
-  - type: script
-    snippets:
-      - 'rm -drf /usr/lib/modules/*'
-
   - type: dnf
     repos:
       cleanup: true
