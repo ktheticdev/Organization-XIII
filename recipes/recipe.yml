@@ -34,8 +34,6 @@ modules:
         - docker-buildx-plugin
         - docker-compose-plugin
         - trivalent
-        - https://github.com/ktheticdev/ricoh-spc261sfnw-driver-rpm/releases/download/v1/sp260_series_mf_pcl-1.01-0.noarch.rpm
-        - https://github.com/ktheticdev/ricoh-spc261sfnw-driver-rpm/releases/download/v1/ricoh-scan-utility-rhel-1.01-0.x86_64.rpm
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
