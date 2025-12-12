@@ -27,6 +27,7 @@ modules:
         - https://download.docker.com/linux/fedora/docker-ce.repo
     optfix:
       - ricoh-scan-utility
+      - v2rayN
     install:
       packages:
         - zsh
