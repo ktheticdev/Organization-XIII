@@ -48,10 +48,6 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
         - cosign
-    replace:
-      - from-repo: fedora
-        packages:
-          - libinput-1.29.1-1.fc43
         
   - type: rpm-ostree
     repos:
