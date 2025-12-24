@@ -1,10 +1,11 @@
 RUN \
   --mount=type=bind,from=ghcr.io/ktheticdev/akmods-nvidia:cachyos-lto-43,src=/rpms,dst=/tmp/rpms,ro \
   set -eux; \
-  echo "== Installing prebuilt kernel modules =="; \
+  echo "=== Installing prebuilt kernel modules ==="; \
   echo "RPMs found:"; \
-  find /tmp/rpms; \
- # dnf install -y \
- #   --setopt=install_weak_deps=False \
- #   /tmp/rpms/kmod*nvidia*.rpm; \
-  echo "=== NVIDIA kmods install complete ==="
+  ls -lh /tmp/rpms/kmods; \
+  test -n "$(ls -A /tmp/rpms/kmods)"; \
+  dnf install -y \
+    --setopt=install_weak_deps=False \
+    /tmp/rpms/kmods/kmod*nvidia*.rpm; \
+  echo "=== Common kmods install complete ==="
