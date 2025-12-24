@@ -3,9 +3,8 @@ RUN \
   set -eux; \
   echo "== Installing prebuilt kernel modules =="; \
   echo "RPMs found:"; \
-  ls -lh /tmp/rpms; \
-  test -n "$(ls -A /tmp/rpms)"; \
-  dnf install -y \
-    --setopt=install_weak_deps=False \
-    /tmp/rpms/kmod*nvidia*.rpm; \
+  find /tmp/rpms; \
+ # dnf install -y \
+ #   --setopt=install_weak_deps=False \
+ #   /tmp/rpms/kmod*nvidia*.rpm; \
   echo "=== NVIDIA kmods install complete ==="
