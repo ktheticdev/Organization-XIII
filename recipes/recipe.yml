@@ -58,6 +58,7 @@ modules:
     containerfiles:
       - kmods-nvidia
       - kmods-common
+
   - type: dnf
     install:
       allow-erasing: true
