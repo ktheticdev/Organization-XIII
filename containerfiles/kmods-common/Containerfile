@@ -1,0 +1,11 @@
+RUN \
+  --mount=type=bind,from=ghcr.io/ktheticdev/akmods:latest,src=/rpms,dst=/tmp/rpms,ro \
+  set -eux; \
+  echo "=== Installing prebuilt kernel modules ==="; \
+  echo "RPMs found:"; \
+  ls -lh /tmp/rpms; \
+  test -n "$(ls -A /tmp/rpms)"; \
+  dnf install -y \
+    --setopt=install_weak_deps=False \
+    /tmp/rpms/kmod*v4l2loopback*.rpm; \
+  echo "=== Common kmods install complete ==="

@@ -49,19 +49,15 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
         - cosign
-        
+
   - type: rpm-ostree
     repos:
       - https://negativo17.org/repos/fedora-multimedia.repo
 
-  - type: akmods
-    base: cachyos-lto
-    nvidia:
-      nvidia: proprietary
-    install:
-      - v4l2loopback
-      - nvidia
-
+  - type: containerfile
+    containerfiles:
+      - kmods-nvidia
+      - kmods-common
   - type: dnf
     install:
       allow-erasing: true
