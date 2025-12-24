@@ -6,6 +6,11 @@ RUN \
   ls -lh /tmp/rpms/kmods; \
   test -n "$(ls -A /tmp/rpms/kmods)"; \
   dnf install -y \
+    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm; \
+  dnf install -y \
     --setopt=install_weak_deps=False \
     /tmp/rpms/kmods/kmod*v4l2loopback*.rpm; \
+  dnf remove -y rpmfusion-free-release rpmfusion-nonfree-release; \
+  dnf clean all; \
   echo "=== Common kmods install complete ==="

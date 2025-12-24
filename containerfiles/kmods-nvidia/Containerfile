@@ -7,5 +7,6 @@ RUN \
   test -n "$(ls -A /tmp/rpms/kmods)"; \
   dnf install -y \
     --setopt=install_weak_deps=False \
+    --disablerepo="*" \
     /tmp/rpms/kmods/kmod*nvidia*.rpm; \
   echo "=== Common kmods install complete ==="
