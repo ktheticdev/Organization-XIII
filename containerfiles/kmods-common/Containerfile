@@ -1,5 +1,5 @@
 RUN \
-  --mount=type=bind,from=ghcr.io/ktheticdev/akmods:latest,src=/rpms,dst=/tmp/rpms,ro \
+  --mount=type=bind,from=ghcr.io/ktheticdev/akmods:cachyos-lto-43,src=/rpms,dst=/tmp/rpms,ro \
   set -eux; \
   echo "=== Installing prebuilt kernel modules ==="; \
   echo "RPMs found:"; \
