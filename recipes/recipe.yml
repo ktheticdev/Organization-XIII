@@ -40,6 +40,7 @@ modules:
         - containerd.io
         - docker-buildx-plugin
         - docker-compose-plugin
+        - libayatana-appindicator-gtk3
         - trivalent
         - R
         - rstudio-desktop
