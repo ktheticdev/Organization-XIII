@@ -18,6 +18,11 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
   - from-file: kernels/cachy-lto.yml
 
+modules:
+  - type: script
+    scripts:
+      - clashverge.sh
+
   - type: dnf
     repos:
       copr:
