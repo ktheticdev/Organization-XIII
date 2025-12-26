@@ -27,3 +27,4 @@ curl -L -o "$FILENAME" "$DOWNLOAD_URL"
 echo "Done."
 
 dnf -y install --setopt=install_weak_deps=False --assumeno --disablerepo="*" "$FILENAME"
+dnf clean all
