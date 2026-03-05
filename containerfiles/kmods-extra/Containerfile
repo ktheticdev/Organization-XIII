@@ -1,0 +1,16 @@
+RUN \
+  --mount=type=bind,from=ghcr.io/ktheticdev/akmods-extra:cachyos-lto-43,src=/rpms,dst=/tmp/rpms,ro \
+  set -eux; \
+  echo "=== Installing prebuilt kernel modules ==="; \
+  echo "RPMs found:"; \
+  ls -lh /tmp/rpms/kmods; \
+  test -n "$(ls -A /tmp/rpms/kmods)"; \
+  dnf install -y \
+    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm; \
+  dnf install -y \
+    --setopt=install_weak_deps=False \
+    /tmp/rpms/kmods/kmod*VirtualBox*.rpm; \
+  dnf remove -y rpmfusion-free-release rpmfusion-nonfree-release; \
+  dnf clean all; \
+  echo "=== Extra kmods install complete ==="

@@ -64,14 +64,19 @@ modules:
     containerfiles:
       - kmods-nvidia
       - kmods-common
+      - kmods-extra
 
   - type: dnf
+    repos:
+        files:
+            - https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
     install:
       allow-erasing: true
       packages:
         - nvidia-driver
         - nvidia-driver-cuda
         - nvidia-settings
+        - VirtualBox-7.2
 
   - type: default-flatpaks
     configurations:

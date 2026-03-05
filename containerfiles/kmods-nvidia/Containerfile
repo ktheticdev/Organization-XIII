@@ -10,4 +10,4 @@ RUN \
     --disablerepo="*" \
     --enablerepo="fedora-multimedia" \
     /tmp/rpms/kmods/kmod*nvidia*.rpm; \
-  echo "=== Common kmods install complete ==="
+  echo "=== NVIDIA kmods install complete ==="
