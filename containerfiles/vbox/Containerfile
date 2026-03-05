@@ -12,4 +12,5 @@ RUN \
     /tmp/rpms/kmods/kmod*VirtualBox*.rpm VirtualBox; \
   dnf remove -y rpmfusion-free-release rpmfusion-nonfree-release; \
   dnf clean all; \
+  ln -sf /opt/virtualbox/ExtensionPacks/ /usr/lib64/virtualbox/ExtensionPacks; \
   echo "=== Oracle VirtualBox install complete ==="
