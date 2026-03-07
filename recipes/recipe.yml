@@ -66,6 +66,11 @@ modules:
       - kmods-common
       - vbox
 
+  - type: systemd
+    system:
+      enabled:
+        - usr-lib64-virtualbox-ExtensionPacks.mount
+
   - type: dnf
     install:
       allow-erasing: true

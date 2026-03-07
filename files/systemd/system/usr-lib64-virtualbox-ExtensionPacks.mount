@@ -1,0 +1,14 @@
+[Unit]
+Description=Bind mount VirtualBox ExtensionPacks from /opt to /usr
+ConditionPathIsDirectory=/usr/lib64/virtualbox/ExtensionPacks
+ConditionPathIsDirectory=/opt/virtualbox/ExtensionPacks
+After=local-fs.target
+
+[Mount]
+What=/opt/virtualbox/ExtensionPacks
+Where=/usr/lib64/virtualbox/ExtensionPacks
+Type=none
+Options=bind
+
+[Install]
+WantedBy=multi-user.target
