@@ -1,7 +1,6 @@
 [Unit]
 Description=Bind mount VirtualBox ExtensionPacks from /opt to /usr
 ConditionPathIsDirectory=/usr/lib64/virtualbox/ExtensionPacks
-ConditionPathIsDirectory=/opt/virtualbox/ExtensionPacks
 
 [Mount]
 What=/opt/virtualbox/ExtensionPacks
