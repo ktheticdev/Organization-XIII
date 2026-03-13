@@ -1,9 +1,10 @@
 [Unit]
 Description=Bind mount VirtualBox ExtensionPacks from /opt to /usr
 ConditionPathIsDirectory=/usr/lib64/virtualbox/ExtensionPacks
+RequiresMountsFor=/var
 
 [Mount]
-What=/opt/virtualbox/ExtensionPacks
+What=/var/opt/virtualbox/ExtensionPacks
 Where=/usr/lib64/virtualbox/ExtensionPacks
 Type=none
 Options=bind
