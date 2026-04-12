@@ -38,7 +38,7 @@ modules:
         - docker-buildx-plugin
         - docker-compose-plugin
         - libayatana-appindicator-gtk3
-        - webkit2gtk4.1
+        - libicu76
         - trivalent
         - R
         - rstudio-desktop
