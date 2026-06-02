@@ -6,7 +6,6 @@ def pick(List<String> values, String fallback = '') {
   }
   return fallback
 }
-
 node {
   stage('Normalize CI Context') {
     env.CI_EVENT_NAME = pick([
