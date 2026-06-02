@@ -34,7 +34,6 @@ jobs:
       - name: Build Custom Image via Jenkinsfile Runner
         uses: jenkinsci/jenkinsfile-runner-github-actions/jenkinsfile-runner-prepackaged@04c450a7cd2001baf0d5bf263c2d421b958659d1
         env:
-          JENKINS_VERSION: 2.555.2
           GITHUB_TOKEN: ${{ github.token }}
           SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}
           CI_RECIPE: ${{ matrix.recipe }}
