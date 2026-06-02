@@ -59,9 +59,8 @@ node {
 
     env.CI_REGISTRY_USER = pick([
       env.CI_REGISTRY_USER,
-      env.REGISTRY_USER,
-      env.GITHUB_ACTOR
-    ], 'jenkins')
+      env.REGISTRY_USER
+    ], '')
 
     env.CI_SIGNING_SECRET = pick([
       env.CI_SIGNING_SECRET,
@@ -98,6 +97,10 @@ bluebuild --version
 set -euo pipefail
 if [ -z "${CI_REGISTRY_TOKEN:-}" ]; then
   echo "CI_REGISTRY_TOKEN is required for non-PR builds."
+  exit 1
+fi
+if [ -z "${CI_REGISTRY_USER:-}" ]; then
+  echo "CI_REGISTRY_USER is required for non-PR builds."
   exit 1
 fi
 if command -v docker >/dev/null 2>&1; then
