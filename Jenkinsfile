@@ -1,6 +1,6 @@
 def pick(List<String> values, String fallback = '') {
   for (String value : values) {
-    if (value?.trim()) {
+    if (value != null && value.trim()) {
       return value.trim()
     }
   }
@@ -44,7 +44,7 @@ node {
       env.SOURCE_WORKSPACE,
       env.GITHUB_WORKSPACE,
       env.CI_PROJECT_DIR
-    ], '/github/workspace')
+    ], env.WORKSPACE ?: '/github/workspace')
 
     env.CI_REGISTRY = pick([
       env.CI_REGISTRY,
