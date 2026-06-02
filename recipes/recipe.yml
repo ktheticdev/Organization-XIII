@@ -21,7 +21,6 @@ modules:
   - type: dnf
     repos:
       copr:
-        - iucar/rstudio
         - atim/starship
       files:
         - https://repo.secureblue.dev/secureblue.repo
@@ -40,8 +39,6 @@ modules:
         - libayatana-appindicator-gtk3
         - libicu76
         - trivalent
-        - R
-        - rstudio-desktop
         - waydroid
         - gamescope
         - https://github.com/2dust/v2rayN/releases/download/7.21.2/v2rayN-linux-rhel-64.rpm
