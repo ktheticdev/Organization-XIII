@@ -1,4 +1,4 @@
-# KH is a bad videogame &nbsp; [![bluebuild build badge](https://github.com/ktheticdev/Organization-XIII/actions/workflows/build.yml/badge.svg)](https://github.com/ktheticdev/Organization-XIII/actions/workflows/build.yml)
+# KH is a bad videogame
 
 See the unseen.
 
