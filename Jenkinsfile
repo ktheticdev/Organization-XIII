@@ -44,7 +44,7 @@ node {
       env.SOURCE_WORKSPACE,
       env.GITHUB_WORKSPACE,
       env.CI_PROJECT_DIR
-    ], env.WORKSPACE ?: '/github/workspace')
+    ], env.WORKSPACE ?: '')
 
     env.CI_REGISTRY = pick([
       env.CI_REGISTRY,
@@ -68,7 +68,7 @@ node {
       env.SIGNING_SECRET
     ], '')
 
-    env.CI_IS_PR = (env.CI_EVENT_NAME == 'pull_request' || env.CI_EVENT_NAME == 'merge_request_event') ? 'true' : 'false'
+    env.CI_IS_PR = (env.CI_EVENT_NAME == 'pull_request' || env.CI_EVENT_NAME == 'merge_request_event').toString()
 
     echo "event=${env.CI_EVENT_NAME}, ref=${env.CI_REF}, is_pr=${env.CI_IS_PR}, recipe=${env.CI_RECIPE}"
   }
@@ -93,7 +93,7 @@ bluebuild --version
   }
 
   stage('Registry Login') {
-    if (env.CI_IS_PR != 'true') {
+    if (!env.CI_IS_PR?.toBoolean()) {
       sh '''#!/usr/bin/env bash
 set -euo pipefail
 if [ -z "${CI_REGISTRY_TOKEN:-}" ]; then
