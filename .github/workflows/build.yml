@@ -32,7 +32,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build Custom Image via Jenkinsfile Runner
-        uses: jenkinsci/jenkinsfile-runner-github-actions/jenkinsfile-runner-prepackaged@master
+        uses: jenkinsci/jenkinsfile-runner-github-actions/jenkinsfile-runner-prepackaged@04c450a7cd2001baf0d5bf263c2d421b958659d1
         env:
           GITHUB_TOKEN: ${{ github.token }}
           SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}
@@ -41,5 +41,7 @@ jobs:
           CI_REF: ${{ github.ref }}
           CI_SHA: ${{ github.sha }}
           CI_PR_NUMBER: ${{ github.event.number }}
+          CI_SOURCE_WORKSPACE: ${{ github.workspace }}
+          CI_REGISTRY: ghcr.io
           CI_REGISTRY_TOKEN: ${{ github.token }}
           CI_REGISTRY_USER: ${{ github.actor }}

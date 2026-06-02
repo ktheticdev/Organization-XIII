@@ -39,6 +39,18 @@ node {
       env.RECIPE
     ], 'recipe.yml')
 
+    env.CI_SOURCE_WORKSPACE = pick([
+      env.CI_SOURCE_WORKSPACE,
+      env.SOURCE_WORKSPACE,
+      env.GITHUB_WORKSPACE,
+      env.CI_PROJECT_DIR
+    ], '/github/workspace')
+
+    env.CI_REGISTRY = pick([
+      env.CI_REGISTRY,
+      env.REGISTRY_URL
+    ], 'ghcr.io')
+
     env.CI_REGISTRY_TOKEN = pick([
       env.CI_REGISTRY_TOKEN,
       env.REGISTRY_TOKEN,
@@ -64,8 +76,8 @@ node {
   stage('Prepare Workspace') {
     sh '''#!/usr/bin/env bash
 set -euo pipefail
-if [ -d /github/workspace ]; then
-  cp -a /github/workspace/. "$WORKSPACE"/
+if [ -n "${CI_SOURCE_WORKSPACE:-}" ] && [ -d "${CI_SOURCE_WORKSPACE}" ] && [ "${CI_SOURCE_WORKSPACE}" != "${WORKSPACE}" ]; then
+  cp -a "${CI_SOURCE_WORKSPACE}"/. "$WORKSPACE"/
 fi
 '''
   }
@@ -89,9 +101,9 @@ if [ -z "${CI_REGISTRY_TOKEN:-}" ]; then
   exit 1
 fi
 if command -v docker >/dev/null 2>&1; then
-  echo "$CI_REGISTRY_TOKEN" | docker login ghcr.io -u "${CI_REGISTRY_USER}" --password-stdin
+  echo "$CI_REGISTRY_TOKEN" | docker login "${CI_REGISTRY}" -u "${CI_REGISTRY_USER}" --password-stdin
 elif command -v podman >/dev/null 2>&1; then
-  echo "$CI_REGISTRY_TOKEN" | podman login ghcr.io -u "${CI_REGISTRY_USER}" --password-stdin
+  echo "$CI_REGISTRY_TOKEN" | podman login "${CI_REGISTRY}" -u "${CI_REGISTRY_USER}" --password-stdin
 else
   echo "No docker/podman runtime available for registry login."
   exit 1
