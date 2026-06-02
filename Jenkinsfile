@@ -61,7 +61,7 @@ node {
       env.CI_REGISTRY_USER,
       env.REGISTRY_USER,
       env.GITHUB_ACTOR
-    ], 'github-actions[bot]')
+    ], 'jenkins')
 
     env.CI_SIGNING_SECRET = pick([
       env.CI_SIGNING_SECRET,
