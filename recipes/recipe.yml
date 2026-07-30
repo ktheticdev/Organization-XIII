@@ -78,6 +78,8 @@ modules:
         - nvidia-driver
         - nvidia-driver-cuda
         - nvidia-settings
+        - https://github.com/ktheticdev/ricoh-spc261sfnw-driver-rpm/releases/download/v2/sane-airscan-0.99.36-3.fc44.x86_64.rpm
+        - https://github.com/ktheticdev/ricoh-spc261sfnw-driver-rpm/releases/download/v2/libsane-airscan-0.99.36-3.fc44.x86_64.rpm
 
   - type: default-flatpaks
     configurations:
