@@ -26,6 +26,7 @@ modules:
         - https://repo.secureblue.dev/secureblue.repo
         - https://download.docker.com/linux/fedora/docker-ce.repo
         - fury-nushell.repo
+        - https://parhelia512.github.io/throne.repo
     install:
       packages:
         - nushell
@@ -39,6 +40,10 @@ modules:
         - libayatana-appindicator-gtk3
         - libicu76
         - trivalent
+        - throne
+        - waydroid
+        - gamescope
+        - simple-scan
         - https://github.com/2dust/v2rayN/releases/latest/download/v2rayN-linux-rhel-64.rpm
     remove:
       packages:
