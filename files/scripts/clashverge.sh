@@ -20,11 +20,13 @@ echo "Found RPM:"
 echo "$DOWNLOAD_URL"
 
 FILENAME=$(basename "$DOWNLOAD_URL")
+RPM_PATH=$(mktemp --tmpdir clash-verge-XXXXXX.rpm)
+trap 'rm -f "$RPM_PATH"' EXIT
 
 echo "Downloading $FILENAME..."
-curl -L -o "$FILENAME" "$DOWNLOAD_URL"
+curl --fail --location --output "$RPM_PATH" "$DOWNLOAD_URL"
 
 echo "Done."
 
-dnf -y install --setopt=install_weak_deps=False --disablerepo="*" "$FILENAME"
+dnf -y install --setopt=install_weak_deps=False --disablerepo="*" "$RPM_PATH"
 dnf clean all
