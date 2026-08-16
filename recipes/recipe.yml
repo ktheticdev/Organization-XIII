@@ -45,8 +45,6 @@ modules:
         - gamescope
         - simple-scan
         - https://github.com/2dust/v2rayN/releases/latest/download/v2rayN-linux-rhel-64.rpm
-        - https://github.com/ktheticdev/ricoh-spc261sfnw-driver-rpm/releases/download/v2/sp260_series_mf_pcl-1.01-0.noarch.rpm
-        - https://github.com/ktheticdev/ricoh-spc261sfnw-driver-rpm/releases/download/v2/ricoh-scan-utility-rhel-1.01-0.x86_64.rpm
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -61,6 +59,7 @@ modules:
       - RUN chmod 4755 /usr/lib64/Throne/ThroneCore
 
   - type: script
+    no-cache: true
     scripts:
       - clashverge.sh
 
@@ -101,4 +100,3 @@ modules:
           - org.gnome.eog
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
-
