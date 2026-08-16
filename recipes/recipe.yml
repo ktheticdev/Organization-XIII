@@ -55,6 +55,11 @@ modules:
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
         - cosign
 
+  - type: containerfile
+    snippets:
+      - RUN chown root:root /usr/lib64/Throne/ThroneCore
+      - RUN chmod 4755 /usr/lib64/Throne/ThroneCore
+
   - type: script
     scripts:
       - clashverge.sh
