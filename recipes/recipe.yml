@@ -44,6 +44,7 @@ modules:
         - waydroid
         - gamescope
         - simple-scan
+        - libnsl
         - https://github.com/2dust/v2rayN/releases/latest/download/v2rayN-linux-rhel-64.rpm
     remove:
       packages:
