@@ -45,6 +45,7 @@ modules:
         - gamescope
         - simple-scan
         - libnsl
+        - libpng12
         - https://github.com/2dust/v2rayN/releases/latest/download/v2rayN-linux-rhel-64.rpm
     remove:
       packages:
